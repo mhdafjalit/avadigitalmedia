@@ -1,0 +1,99 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><div id="sidebar" class="float-start nav-collapse sticky-top">
+<div class="inner_logo"><a href="../admin/dashboard.htm" title="Auva Digital Media"><img src="../images/auva2.jpg" title="Auva Digital Media" alt=""></a></div>
+
+<!--<div class="user_top d-flex justify-content-between position-relative">
+<p class="user_pic_top text-center overflow-hidden rounded-circle"><span class="align-middle table-cell"><img src="../images/user-img.jpg" alt="Puneet Kumar" class="mw-100 mh-100"></span></p> 
+<div class="user_info">
+<p class="user_name text-black fw-semibold overflow-hidden">Gurudevadigital</p>
+<p class="user_email text-black overflow-hidden">gurudevadigital@gmail.com</p>
+</div>
+<i class="fas fa-caret-down"></i>
+</div>-->
+
+<div class="acc_box position-relative mh-100 h-100">
+<ul class="acc_links m-0 p-0 text-white">
+<li class="acc_act"><a href="../admin/dashboard.htm" title="Dashboard"><img src="../images/lft-ico1.svg" alt="" class="acc_ico"> <span class="trans_eff">Dashboard</span></a></li>
+
+<li><a href="javascript:void(0)" title="User Manage"><img src="../images/lft-ico2.svg" alt="" class="acc_ico"> <span>User Manage <img src="../images/arr-down.svg" class="float-end mt-2" alt=""></span></a>
+<div class="dashboard_sub_list dash_sub_list dn">
+<a href="../admin/sub-user-manage.htm">Sub User Creation </a>
+</div>
+</li>
+
+<!--<li><a href="javascript:void(0)" title="Manage Orders"><img src="../images/lft-ico3.svg" alt="User Manage" class="acc_ico"> <span>New Release <img src="../images/arr-down.svg" class="float-end mt-2" alt=""></span></a>
+<div class="dashboard_sub_list dash_sub_list dn">
+<a href="../new-release.htm"><img src="../images/arr-rgt.svg" alt="Sub User Manage"> Create Your Releases</a>
+
+<p class="acc_link_title">Catalog Music</p>
+<div class="dn">
+<a href="../release-music.htm"><img src="../images/arr-rgt.svg" alt="Sub User Manage"> All Release Music </a>
+<a href="../release-finalize-music.htm"><img src="../images/arr-rgt.svg" alt="Roles Manage"> Release to Finalize Music</a>
+<a href="../release-correct-music.htm"><img src="../images/arr-rgt.svg" alt="Roles Manage"> Release to Correct Music</a>
+<a href="../caller-tune.htm"><img src="../images/arr-rgt.svg" alt="Roles Manage"> Caller Tune</a>
+</div>
+
+<p class="acc_link_title">Catalog Video</p>
+<div class="dn">
+<a href="../release-video-add.htm"><img src="../images/arr-rgt.svg" alt="Sub User Manage"> Release Video Add </a>
+<a href="../release-video.htm"><img src="../images/arr-rgt.svg" alt="Roles Manage"> All Release Video</a>
+<a href="../release-correct-video.htm"><img src="../images/arr-rgt.svg" alt="Roles Manage"> Release to Finalize Video</a>
+<a href="../correct-video.htm"><img src="../images/arr-rgt.svg" alt="Roles Manage"> Release to Correct Video</a>
+</div>
+</div>
+</li>-->
+
+<!--<li><a href="../new-release.htm" title="New Release"><img src="../images/lft-ico3.svg" alt="" class="acc_ico"> <span>New Release</span></a></li>
+
+<li><a href="javascript:void(0)" title="Manage Orders"><img src="../images/lft-ico4.svg" alt="User Manage" class="acc_ico"> <span>Catalog Music <img src="../images/arr-down.svg" class="float-end mt-2" alt=""></span></a>
+<div class="dashboard_sub_list dash_sub_list dn">
+<a href="../release-music.htm"><img src="../images/arr-rgt.svg" alt="Sub User Manage"> All Release Music </a>
+<a href="../release-finalize-music.htm"><img src="../images/arr-rgt.svg" alt="Roles Manage"> Release to Finalize Music</a>
+<a href="../release-correct-music.htm"><img src="../images/arr-rgt.svg" alt="Roles Manage"> Release to Correct Music</a>
+<a href="../caller-tune.htm"><img src="../images/arr-rgt.svg" alt="Roles Manage"> Caller Tune</a>
+</div>
+</li>
+
+<li><a href="javascript:void(0)" title="Manage Orders"><img src="../images/lft-ico5.svg" alt="User Manage" class="acc_ico"> <span>Catalog Video <img src="../images/arr-down.svg" class="float-end mt-2" alt=""></span></a>
+<div class="dashboard_sub_list dash_sub_list dn">
+<a href="../release-video-add.htm"><img src="../images/arr-rgt.svg" alt="Sub User Manage"> Release Video Add </a>
+<a href="../release-video.htm"><img src="../images/arr-rgt.svg" alt="Roles Manage"> All Release Video</a>
+<a href="../release-correct-video.htm"><img src="../images/arr-rgt.svg" alt="Roles Manage"> Release to Finalize Video</a>
+<a href="../correct-video.htm"><img src="../images/arr-rgt.svg" alt="Roles Manage"> Release to Correct Video</a>
+</div>
+</li>-->
+
+<li><a href="../admin/labels.htm" title="Label Manage"><img src="../images/lft-ico6.svg" alt="" class="acc_ico"> <span>Labels</span></a></li>
+
+<li><a href="../admin/meta-data.htm" title="Meta Data"><img src="../images/lft-ico7.svg" alt="" class="acc_ico"> <span>Meta Data</span></a></li>
+
+<!--<li><a href="javascript:void(0)" title="Manage Orders"><img src="../images/lft-ico9.svg" alt="User Management" class="acc_ico"> <span>Reports <img src="../images/arr-down.svg" class="float-end mt-2" alt=""></span></a>
+<div class="dashboard_sub_list dash_sub_list dn">
+<a href="#"><img src="../images/arr-rgt.svg" alt=""> Financial</a>
+<a href="../analytics.htm"><img src="../images/arr-rgt.svg" alt=""> Analytics</a>
+</div>
+</li>-->
+
+<li><a href="../admin/channel-add-request.htm" title="Youtube Request"><img src="../images/lft-ico10.svg" alt="" class="acc_ico"> <span>Youtube Request</span></a></li>
+
+<!--<li><a href="javascript:void(0)" title="Manage Orders"><img src="../images/lft-ico10.svg" alt="User Management" class="acc_ico"> <span>Youtube Request <img src="../images/arr-down.svg" class="float-end mt-2" alt=""></span></a>
+<div class="dashboard_sub_list dash_sub_list dn">
+<a href="../channel-add-request.htm"><img src="../images/arr-rgt.svg" alt=""> Channel Add Request</a>
+<a href="#"><img src="../images/arr-rgt.svg" alt=""> Channel White List Request</a>
+<a href="#"><img src="../images/arr-rgt.svg" alt=""> Claim Release Request</a>
+</div>
+</li>-->
+
+<!--<li><a href="javascript:void(0)" title="Setting"><img src="../images/lft-ico11.svg" alt="Setting" class="acc_ico"> <span>Setting <img src="../images/arr-down.svg" class="float-end mt-2" alt=""></span></a>
+<div class="dashboard_sub_list dash_sub_list dn">
+<a href="../setting-user-access.htm"><img src="../images/arr-rgt.svg" alt=""> User Access</a>
+<a href="../setting.htm"><img src="../images/arr-rgt.svg" alt=""> User Access Roles</a>
+<a href="../edit-user.htm"><img src="../images/arr-rgt.svg" alt=""> Edit Profile</a>
+<a href="../index.htm"><img src="../images/arr-rgt.svg" alt=""> Logout</a>
+</div>
+</li>-->
+
+</ul>
+</div>
+
+<p class="acc_copyright text-center mt-4">Copyright &copy; 2024 <br><span class="fs-6">Auva Digital Media.</span><br>All rights reserved.<!-- <br><br>Developed and Managed by <br><a href="https://www.weblinkindia.net" target="_blank" rel="nofollow">WeblinkIndia.NET</a>--></p>
+</div>

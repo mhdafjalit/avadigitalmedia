@@ -1,0 +1,33 @@
+.ac_results {
+	padding: 2px 0px 0px 0px;
+	border: 1px solid #ddd;
+	background-color: white;
+	color: #222;	
+	overflow: hidden;
+	z-index: 99999;	
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results li {
+	margin: 3px 5px 3px 5px; padding: 2px; min-height:20px; cursor: pointer; -moz-border-radius: 3px; -webkit-border-radius: 7px; list-style-type: none;font-family:Verdana, Geneva, sans-serif !important; font-size:12px !important;
+}
+
+.ac_loading {
+	background: white url('indicator.gif') right center no-repeat;
+}
+
+.ac_odd {
+	background-color: #eee;
+}
+
+.ac_over {
+	background-color: #00C0FF;
+	color: white;
+}

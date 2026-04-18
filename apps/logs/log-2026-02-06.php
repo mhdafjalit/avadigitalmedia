@@ -1,0 +1,8 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2026-02-06 15:20:52 --> The provided image is not valid.
+ERROR - 2026-02-06 15:20:52 --> Your server does not support the GD function required to process this type of image.
+ERROR - 2026-02-06 20:04:57 --> The provided image is not valid.
+ERROR - 2026-02-06 20:04:57 --> Your server does not support the GD function required to process this type of image.
+ERROR - 2026-02-06 20:04:57 --> The provided image is not valid.
+ERROR - 2026-02-06 20:04:57 --> Your server does not support the GD function required to process this type of image.

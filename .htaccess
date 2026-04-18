@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Set development environment for localhost
+    SetEnvIf Host "^localhost$" CI_ENV=development
+
+    # Protect system folders
+    RedirectMatch 403 ^/(system|codeigniter|\.git|\.hg).*$
+
+    # Remove index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>

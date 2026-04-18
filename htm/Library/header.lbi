@@ -1,0 +1,43 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<header>
+<div class="header sticky">
+<div class="nav_pos hand float-start">
+<a class="tog_menu"><img src="../images/bar.svg" alt="Navigation"></a></div>
+<div class="dashboard_right float-end d-flex justify-content-between">
+<div class="search_top d-inline-block align-top">
+<p class="srch_mob d-block d-lg-none shownext"><img src="../images/search.svg" alt="Search"></p>
+<div class="srch_form rounded-5 mob_hid">
+<input name="" type="text" placeholder="Search Keyword" class="w-100 border-0 bg-transparent">
+<button type="submit" class="border-0 bg-transparent text-center position-absolute"><img src="../images/search.svg" alt="Search"></button>
+</div>
+</div>
+
+<div>
+<!--<div class="tollfree alert_top d-none d-md-inline-block">
+<div class="d-flex justify-content-between">
+<p class="toll_ico d-block text-center rounded-circle bg-white"><img src="../images/call.svg" width="24" alt=""></p> 
+<div class="mt-1">
+<b>08068329710</b> <p class="d-inline-block align-middle text-uppercase rounded-4"><span class="d-inline-block rounded-circle"></span> Toll Free</p>
+<small class="d-block fw-medium">Mon-Sat • 10:00 AM - 6:00 PM</small>
+</div>
+</div>
+</div>-->
+
+<div class="dropdown alert_top d-inline-block align-top position-relative">
+<button type="button" class="btn border-0 p-0 rounded-circle d-block text-center trans_eff" data-bs-toggle="dropdown" aria-expanded="false"><img src="../images/bell.svg" alt=""><img src="../images/dot.svg" alt="" class="alert_top_dot position-absolute rounded-circle"></button>
+<div class="dropdown-menu alert_box">
+<a href="#">Lorem ipsum dolor sit amet</a>
+<a href="#">Consectetur adipiscing elit duis sit</a>
+<a href="#">Adipiscing elit duis sit amet</a>
+</div>
+</div>
+
+<a href="../sub-user/new-release.htm" title="Create Releases" class="create_top text-white rounded-5 fw-medium trans_eff d-none d-sm-inline-block align-top"><img src="../images/create.svg" width="26" alt="" class="me-1"> Create Releases</a>
+
+<p class="setting_top d-inline-block align-top"><a href="../sub-user/edit-user.htm" title="Setting" class="rounded-circle d-block text-center trans_eff"><img src="../images/setting.svg" alt="Setting"></a></p>
+
+<p class="logout_top d-inline-block align-top"><a href="../index.htm" title="Logout" class="rounded-circle d-block text-center trans_eff"><img src="../images/logout.svg" alt="Logout"></a></p>
+</div>
+</div>
+</div>
+</header>

@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /sitepanel
+Disallow: /assets
+Disallow: /uploaded_files
+Disallow: /users/forgottenpassword
+
+
+Sitemap: http://www.example.com/seo/sitemap.xml 

@@ -1,0 +1,11 @@
+{
+    "require": {
+        "sendgrid/sendgrid": "^7.9",
+		"phpoffice/phpspreadsheet": "^2.26"
+    },
+    "config": {
+        "audit": {
+            "ignore": ["all"]
+        }
+    }
+}

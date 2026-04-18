@@ -1,0 +1,9 @@
+*************** Location  apps\config\routes.php  ************************
+
+
+$route['default_controller']    = "home";
+$route['sitepanel/(:any)']	= "sitepanel/$1";
+$route['seo/sitemap\.xml']      = "seo/sitemap";
+
+
+$route['404_override'] = '';
