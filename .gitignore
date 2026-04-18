@@ -1,0 +1,10 @@
+.env
+node_modules/
+vendor/
+*.zip
+*.sql
+*.log
+storage/logs/*
+tmp/
+cache/
+.htaccess-back-up-for-live
