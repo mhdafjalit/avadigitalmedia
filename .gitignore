@@ -8,3 +8,8 @@ storage/logs/*
 tmp/
 cache/
 .htaccess-back-up-for-live
+index.php
+.htaccess
+composer.json
+composer.lock
+phpinfo.php

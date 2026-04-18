@@ -165,24 +165,24 @@ if($member_type=='3'){
                 </a>
 
                 <div class="dashboard_sub_list dash_sub_list <?php echo ($menu_dashboard_active == 'app_setting') ? '' : 'dn';?>">
-                    <a href="<?php echo site_url('admin/list_role');?>"
+                    <a href="<?php echo site_url('admin/settingcontroller/list_role');?>"
                        <?php echo ($seg == 'list_role') ? 'class="acc_act"' : '';?>>
                        Manage Role
                     </a>
 
-                    <a href="<?php echo site_url('admin/list_department');?>"
+                    <a href="<?php echo site_url('admin/settingcontroller/list_department');?>"
                        <?php echo ($seg == 'list_department') ? 'class="acc_act"' : '';?>>
                        Manage Department
                     </a>
 
                     <?php if($member_type != '2'){ ?>
-                    <a href="<?php echo site_url('admin/list_designation');?>"
+                    <a href="<?php echo site_url('admin/settingcontroller/list_designation');?>"
                        <?php echo ($seg == 'list_designation') ? 'class="acc_act"' : '';?>>
                        Manage Designation
                     </a>
                     <?php } ?>
 
-                    <a href="<?php echo site_url('admin/location_manage');?>"
+                    <a href="<?php echo site_url('admin/settingcontroller/location_manage');?>"
                        <?php echo ($seg == 'location_manage') ? 'class="acc_act"' : '';?>>
                        Manage Location
                     </a>

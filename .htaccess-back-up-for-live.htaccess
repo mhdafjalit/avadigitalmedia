@@ -1,0 +1,27 @@
+<IfModule mod_rewrite.c>
+        RewriteEngine on
+        
+        SetEnvIf HOST "^localhost" CI_ENV=development
+        SetEnvIf HOST "^vps.ebizy.com" CI_ENV=testing
+        SetEnvIf HOST "^43.225.54.243" CI_ENV=testing
+#       SetEnvIf HOST "^192.168.1.252" CI_ENV=testing
+        SetEnvIf HOST != "localhost" CI_ENV=production
+        # Keep people out of codeigniter directory and Git/Mercurial data
+        RedirectMatch 403 ^/(system\/cms\/cache|system\/codeigniter|\.git|\.hg).*$
+                RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        <IfModule mod_php5.c>
+                RewriteRule ^(.*)$ index.php/$1 [L]
+        </IfModule>
+
+        <IfModule !mod_php5.c>
+                RewriteRule ^(.*)$ index.php?/$1 [L]
+        </IfModule>
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

@@ -11,10 +11,6 @@
    $posted_status = $this->input->get_post('status',TRUE);
    $posted_status = escape_chars($posted_status); 
    ?>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <style>
    .switch{
@@ -81,12 +77,12 @@
          </div>
          <div class="main-content-inner">
             <div class="bg-white p-3 mb-3 rounded-3">
-               <?php echo form_open("",'method="get"');?>
+               <?php echo form_open("",'id="search_form" method="get" ');?>
                <div class="row">
                   <div class="col-md-4">
                      <input type="text" name="keyword" class="form-control"
                         value="<?php echo $posted_keyword;?>"
-                        placeholder="Search Designation">
+                        placeholder="Search Department">
                   </div>
                   <div class="col-md-2">
                      <select class="form-control" name="status">
@@ -100,7 +96,7 @@
                   </div>
                   <div class="col-md-2">
                      <?php if($posted_keyword!='' || $posted_status!=''){ ?>
-                     <a href="<?php echo site_url('admin/settingcontroller/list_designation');?>" class="btn btn-danger w-100">
+                     <a href="<?php echo site_url('admin/settingcontroller/list_department');?>" class="btn btn-danger w-100">
                      Clear
                      </a>
                      <?php } ?>
@@ -108,9 +104,8 @@
                   <div class="col-md-2 text-end">
                      <button type="button"
                         class="create_top text-white rounded-5 fw-medium"
-                        data-bs-toggle="modal"
-                        data-bs-target="#addDesignationModal">
-                     + Add Designation
+                        id="openDepartmentModal">
+                     + Add Department
                      </button>
                   </div>
                </div>
@@ -121,87 +116,59 @@
                   <table class="table table-bordered table-striped">
                      <thead>
                         <tr>
-                           <th width="80">Dept Sr</th>
-                           <th>Department</th>
-                           <th width="80">Desig Sr</th>
-                           <th>Designation Name</th>
+                           <th width="60">Sr</th>
+                           <th>Department Name</th>
                            <th width="120">Status</th>
                            <th width="120">Action</th>
                         </tr>
                      </thead>
                      <tbody>
                         <?php 
+                           $i=1;
+                           
                            if(!empty($res)){
                            
-                           $departments = [];
-                           foreach($res as $row){
-                               $departments[$row['department_name']][] = $row;
-                           }
-                           
-                           $dept_sr = 1;
-                           
-                           foreach($departments as $dept_name => $designations){
-                           
-                           $desig_sr = 1;
-                           $first = true;
-                           
-                           foreach($designations as $des){
+                           foreach($res as $val){
                            
                            ?>
                         <tr>
+                           <td><?php echo $i;?></td>
                            <td>
-                              <?php if($first){ echo $dept_sr; } ?>
-                           </td>
-                           <td>
-                              <?php if($first){ ?>
-                              <b><?php echo $dept_name; ?></b><br>
-                              <small><?php echo $des['department_description']; ?></small>
-                              <?php } ?>
-                           </td>
-                           <td><?php echo $desig_sr; ?></td>
-                           <td>
-                              <b><?php echo $des['designation_name']; ?></b><br>
-                              <small><?php echo $des['designation_description']; ?></small>
+                              <b><?php echo $val['department_name'];?></b><br>
+                              <small><?php echo $val['department_description'];?></small>
                            </td>
                            <td>
                               <label class="switch">
                               <input type="checkbox"
                                  class="status_toggle"
-                                 data-id="<?php echo md5($des['designation_id']); ?>"
-                                 <?php echo ($des['status']==1)?'checked':'';?>>
+                                 data-id="<?php echo md5($val['department_id']);?>"
+                                 <?php echo ($val['status']==1) ? 'checked' : ''; ?>>
                               <span class="slider"></span>
                               </label>
                            </td>
                            <td class="action_icon">
                               <a href="javascript:void(0)"
-                                 class="edit_designation"
-                                 data-id="<?php echo md5($des['designation_id']); ?>">
+                                 class="edit_department"
+                                 data-id="<?php echo md5($val['department_id']);?>">
                               <img src="<?php echo theme_url();?>images/edit.svg" width="18">
                               </a>
                               &nbsp;&nbsp;
                               <a href="javascript:void(0)"
-                                 data-url="<?php echo site_url('admin/settingcontroller/delete_designation/'.md5($des['designation_id'])); ?>"
-                                 class="delete_designation">
+                                 data-url="<?php echo site_url("admin/settingcontroller/delete_department/".md5($val['department_id']));?>"
+                                 class="delete_department">
                               <img src="<?php echo theme_url();?>images/delete.svg" width="20">
                               </a>
                            </td>
                         </tr>
-                        <?php
-                           $desig_sr++;
-                           $first=false;
-                           
-                           }
-                           
-                           $dept_sr++;
-                           
+                        <?php 
+                           $i++;
                            }
                            
                            }else{
                            
-                           echo '<tr><td colspan="6" class="text-center">'.$this->config->item('no_record_found').'</td></tr>';
+                           echo '<tr><td colspan="4" class="text-center">'.$this->config->item('no_record_found').'</td></tr>';
                            
                            }
-                           
                            ?>
                      </tbody>
                   </table>
@@ -211,51 +178,32 @@
       </div>
    </div>
 </div>
-<!-- ADD DESIGNATION MODAL -->
-<div class="modal fade" id="addDesignationModal">
+<!-- ADD DEPARTMENT MODAL -->
+<div class="modal fade" id="addDepartmentModal">
    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
          <div class="modal-header modal-theme-header">
-            <h5 class="modal-title">Add Designation</h5>
+            <h5 class="modal-title">Add Department</h5>
             <button type="button" class="close text-white" data-dismiss="modal">
             <span>&times;</span>
             </button>
          </div>
-         <form method="post" action="<?php echo site_url('admin/settingcontroller/create_designation');?>">
+         <form method="post" action="<?php echo site_url('admin/settingcontroller/create_department');?>">
             <input type="hidden"
                name="<?php echo $this->security->get_csrf_token_name();?>"
                value="<?php echo $this->security->get_csrf_hash();?>">
             <div class="modal-body p-4">
                <div class="form-group mb-3">
-                  <label class="form-label">Department *</label>
-                  <select class="form-select" name="department_id">
-                     <option value="">Select Department</option>
-                     <?php 
-                        if(!empty($department)){
-                        foreach($department as $dep){
-                        ?>
-                     <option value="<?php echo $dep['department_id']; ?>"
-                        <?php echo set_select('department',$dep['department_id']); ?>>
-                        <?php echo $dep['department_name']; ?>
-                     </option>
-                     <?php 
-                        }
-                        }
-                        ?>
-                  </select>
-                  <?php echo form_error('department');?>
-               </div>
-               <div class="form-group mb-3">
-                  <label><b>Designation Name</b></label>
+                  <label><b>Department Name</b></label>
                   <input type="text"
-                     name="designation_name"
+                     name="department_name"
                      class="form-control"
                      required>
                </div>
                <div class="form-group mb-3">
                   <label><b>Description</b></label>
                   <textarea
-                     name="designation_description"
+                     name="department_description"
                      class="form-control"></textarea>
                </div>
                <div class="form-group">
@@ -276,59 +224,43 @@
                </button>
                <button type="submit"
                   class="btn btn-purple">
-               Create Designation
+               Create Department
                </button>
             </div>
          </form>
       </div>
    </div>
 </div>
-<!-- EDIT DESIGNATION MODAL -->
-<div class="modal fade" id="editDesignationModal">
+<!-- EDIT DEPARTMENT MODAL -->
+<div class="modal fade" id="editDepartmentModal">
    <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
          <div class="modal-header modal-theme-header">
-            <h5 class="modal-title">Edit Designation</h5>
+            <h5 class="modal-title">Edit Department</h5>
             <button type="button" class="close text-white" data-dismiss="modal">
             <span>&times;</span>
             </button>
          </div>
-         <form method="post" action="<?php echo site_url('admin/settingcontroller/update_designation');?>">
-            <input type="hidden" name="designation_id" id="edit_designation_id">
+         <form method="post" action="<?php echo site_url('admin/settingcontroller/update_department');?>">
             <input type="hidden"
                name="<?php echo $this->security->get_csrf_token_name();?>"
                value="<?php echo $this->security->get_csrf_hash();?>">
+            <input type="hidden"
+               name="department_id"
+               id="edit_department_id">
             <div class="modal-body p-4">
                <div class="form-group mb-3">
-                  <label class="form-label">Department *</label>
-                  <select class="form-select" name="department_id" id="edit_department_id">
-                     <option value="">Select Department</option>
-                     <?php 
-                        if(!empty($department)){
-                        foreach($department as $dep){
-                        ?>
-                     <option value="<?php echo $dep['department_id']; ?>">
-                        <?php echo $dep['department_name']; ?>
-                     </option>
-                     <?php 
-                        }
-                        }
-                        ?>
-                  </select>
-                  <?php echo form_error('department');?>
-               </div>
-               <div class="form-group mb-3">
-                  <label><b>Designation Name</b></label>
+                  <label><b>Department Name</b></label>
                   <input type="text"
-                     name="designation_name"
-                     id="edit_designation_name"
+                     name="department_name"
+                     id="edit_department_name"
                      class="form-control">
                </div>
                <div class="form-group mb-3">
                   <label><b>Description</b></label>
                   <textarea
-                     name="designation_description"
-                     id="edit_designation_description"
+                     name="department_description"
+                     id="edit_department_description"
                      class="form-control"></textarea>
                </div>
                <div class="form-group">
@@ -349,7 +281,7 @@
                </button>
                <button type="submit"
                   class="btn btn-purple">
-               Update Designation
+               Update Department
                </button>
             </div>
          </form>
@@ -381,29 +313,37 @@
 <script>
    $(document).ready(function(){
    
-   /* DELETE DESIGNATION */
+   /* =========================
+   OPEN ADD MODAL
+   ========================= */
    
-   $(document).on("click",".delete_designation",function(){
+   $("#openDepartmentModal").click(function(){
+   
+   $("#addDepartmentModal").modal("show");
+   
+   });
+   
+   
+   /* =========================
+   DELETE DEPARTMENT
+   ========================= */
+   
+   $(".delete_department").click(function(){
    
    var url = $(this).data("url");
    
    swal({
    title: "Are you sure?",
-   text: "This designation will be permanently deleted!",
+   text: "This department will be permanently deleted!",
    icon: "warning",
-   buttons: ["Cancel", "Yes Delete"],
+   buttons: ["Cancel","Yes Delete"],
    dangerMode: true,
-   })
-   .then((willDelete) => {
+   }).then((willDelete) => {
    
    if (willDelete) {
    
    window.location.href = url;
    
-   } else {
-   
-   swal("Deletion Cancelled");
-   
    }
    
    });
@@ -411,69 +351,63 @@
    });
    
    
-   /* EDIT DESIGNATION */
+   /* =========================
+   EDIT DEPARTMENT
+   ========================= */
    
-   $(document).on("click",".edit_designation",function(){
+   $(".edit_department").click(function(){
    
    var id = $(this).data("id");
    
    $.ajax({
    
-   url:"<?php echo site_url('admin/settingcontroller/edit_designation/');?>"+id,
-   type:"GET",
-   dataType:"json",
+   url : "<?php echo site_url('admin/settingcontroller/edit_department/');?>"+id,
+   type: "GET",
+   dataType: "json",
    
    success:function(data){
    
-   $("#edit_designation_id").val(data.designation_id);
-   
-   $("#edit_department_id").val(data.department_id);   // IMPORTANT
-   
-   $("#edit_designation_name").val(data.designation_name);
-   
-   $("#edit_designation_description").val(data.designation_description);
+   $("#edit_department_id").val(data.department_id);
+   $("#edit_department_name").val(data.department_name);
+   $("#edit_department_description").val(data.department_description);
    
    if(data.status == 1){
-   
    $("#edit_status").prop("checked",true);
-   
    }else{
-   
    $("#edit_status").prop("checked",false);
-   
    }
    
-   $("#editDesignationModal").modal("show");
+   $("#editDepartmentModal").modal("show");
    
    }
-   
    
    });
    
    });
    
    
-   /* STATUS CHANGE */
+   /* =========================
+   STATUS TOGGLE
+   ========================= */
    
-   $(document).on("change",".status_toggle",function(){
+   $(".status_toggle").change(function(){
    
    var id = $(this).data("id");
    
-   var status = $(this).prop("checked") ? 'active':'deactive';
+   var status = $(this).prop("checked") ? 'active' : 'deactive';
    
-   var url = "<?php echo site_url('admin/settingcontroller/status_designation/');?>"+id+"?u_status="+status;
+   var url = "<?php echo site_url('admin/settingcontroller/status_department/');?>"+id+"?u_status="+status;
    
    var checkbox = $(this);
    
    swal({
-   title:"Change Status?",
-   text:"Designation status will be updated.",
-   icon:"warning",
-   buttons:["Cancel","Yes Update"]
-   })
-   .then((ok)=>{
+   title: "Change Status?",
+   text: "Do you want to update department status?",
+   icon: "warning",
+   buttons: ["Cancel","Yes Update"],
+   }).then((confirm) => {
    
-   if(ok){
+   if(confirm){
    
    window.location.href = url;
    
@@ -487,6 +421,8 @@
    
    });
    
+   
    });
+   
 </script>
 <?php $this->load->view("bottom_application");?>
